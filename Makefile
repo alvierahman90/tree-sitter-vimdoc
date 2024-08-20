@@ -33,7 +33,7 @@ OBJS := $(patsubst %.c,%.o,$(SRCS))
 
 # flags
 ARFLAGS := rcs
-override CFLAGS += -I$(SRC_DIR) -std=c11 -fPIC
+override CFLAGS += -I$(SRC_DIR) -std=c99 -fPIC
 
 # OS-specific bits
 ifeq ($(OS),Windows_NT)
