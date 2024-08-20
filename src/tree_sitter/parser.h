@@ -180,7 +180,8 @@ static inline bool set_contains(TSCharacterRange *ranges, uint32_t len, int32_t 
 #define ADVANCE_MAP(...)                                              \
   {                                                                   \
     static const uint16_t map[] = { __VA_ARGS__ };                    \
-    for (uint32_t i = 0; i < sizeof(map) / sizeof(map[0]); i += 2) {  \
+    uint32_t i;                                                       \
+    for (i = 0; i < sizeof(map) / sizeof(map[0]); i += 2) {  \
       if (map[i] == lookahead) {                                      \
         state = map[i + 1];                                           \
         goto next_state;                                              \
